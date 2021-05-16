@@ -36,7 +36,7 @@ export class Home extends Component {
       page,
       postsPerPage,
       allPosts,
-      posts
+      posts,
     } = this.state;
     const nextPage = page + postsPerPage;
     const nextPosts = allPosts.slice(nextPage, nextPage + postsPerPage);
@@ -64,7 +64,7 @@ export class Home extends Component {
 
     return (
       <section className="container">
-        <div class="search-container">
+        <div className="search-container">
           {!!searchValue && (
             <h1>Search value: {searchValue}</h1>
           )}
@@ -84,7 +84,7 @@ export class Home extends Component {
           {!searchValue && (
             <Button
               text="Load more posts"
-              onClick={this.loadMorePosts}
+              eventOnClick={this.loadMorePosts}
               disabled={noMorePosts}
             />
           )}
